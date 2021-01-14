@@ -18,6 +18,13 @@ public class Player : Photon.MonoBehaviour
         if (photonView.isMine)
         {
             playerCamera.SetActive(true);
+            playerNameText.text = PhotonNetwork.playerName;
+            playerNameText.color = Color.blue;
+        }
+        else
+        {
+            playerNameText.text = photonView.owner.name;
+            playerNameText.color = Color.red;
         }
     }
 
@@ -32,7 +39,7 @@ public class Player : Photon.MonoBehaviour
     {
         var move = new Vector3(Input.GetAxisRaw("Horizontal"), 0);
         transform.position += move * moveSpeed * Time.deltaTime;
-
-
     }
+
+   
 }
