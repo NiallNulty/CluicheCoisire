@@ -16,8 +16,10 @@ public class GameManager : MonoBehaviour
     public GameObject playerFeed;
     public GameObject feedGrid;
 
+    public Joystick joystick;
     private void Awake()
     {
+
         mainGameCanvas.SetActive(true);
 
         roomName.text = "Room: " + PhotonNetwork.room.Name;
@@ -42,6 +44,8 @@ public class GameManager : MonoBehaviour
     }
     public void SpawnPlayer()
     {
+        joystick.gameObject.SetActive(true);
+
         float randomValue = Random.Range(-1f,1f);
 
         PhotonNetwork.Instantiate(playerPrefab.name, new Vector2(this.transform.position.x * randomValue, this.transform.position.y * randomValue), Quaternion.identity, 0);

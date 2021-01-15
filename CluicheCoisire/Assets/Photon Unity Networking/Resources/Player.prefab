@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 2004720131751358909}
   - component: {fileID: 2004720131751358906}
   - component: {fileID: 2004720131751358908}
-  - component: {fileID: 2004720131751358911}
   - component: {fileID: 2004720131751358910}
   - component: {fileID: 8476598977153259278}
   m_Layer: 0
@@ -154,24 +153,7 @@ MonoBehaviour:
   sr: {fileID: 2004720131751358904}
   playerNameText: {fileID: 284582136722770425}
   moveSpeed: 20
---- !u!114 &2004720131751358911
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2004720131751358905}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56d95ddb121cd404bb40437d42d899c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  photonView: {fileID: 2004720131751358910}
-  rb: {fileID: 2004720131751358909}
-  playerCamera: {fileID: 2004720132710818777}
-  sr: {fileID: 2004720131751358904}
-  playerNameText: {fileID: 284582136722770425}
-  moveSpeed: 0
+  joystick: {fileID: 0}
 --- !u!114 &2004720131751358910
 MonoBehaviour:
   m_ObjectHideFlags: 0

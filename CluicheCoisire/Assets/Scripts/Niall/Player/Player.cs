@@ -13,8 +13,12 @@ public class Player : Photon.MonoBehaviour
 
     public float moveSpeed;
 
+    public Joystick joystick;
+
     private void Awake()
     {
+        joystick = FindObjectOfType<GameManager>().joystick;
+
         if (photonView.isMine)
         {
             playerCamera.SetActive(true);
@@ -37,7 +41,7 @@ public class Player : Photon.MonoBehaviour
     }
     private void CheckInput()
     {
-        var move = new Vector3(Input.GetAxisRaw("Horizontal"), 0);
+        var move = new Vector3(joystick.Horizontal, 0);
         transform.position += move * moveSpeed * Time.deltaTime;
     }
 
