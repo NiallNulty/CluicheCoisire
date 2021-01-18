@@ -15,6 +15,8 @@ public class Player : Photon.MonoBehaviour
 
     public Joystick joystick;
 
+    public bool isReady = false;
+
     private void Awake()
     {
         joystick = FindObjectOfType<GameManager>().joystick;
@@ -24,6 +26,8 @@ public class Player : Photon.MonoBehaviour
             playerCamera.SetActive(true);
             playerNameText.text = PhotonNetwork.playerName;
             playerNameText.color = Color.blue;
+            playerCamera.transform.parent = null;
+            isReady = true;
         }
         else
         {
@@ -32,7 +36,7 @@ public class Player : Photon.MonoBehaviour
         }
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (photonView.isMine)
         {
